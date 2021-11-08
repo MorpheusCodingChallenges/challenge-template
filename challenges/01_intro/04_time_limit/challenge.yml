@@ -1,0 +1,55 @@
+id: time_limit
+name: Time Limit
+description-file: description.md
+time_limit: 1000
+memory_limit: 256000000
+max_submissions: 50
+max_filesize: 5000
+release_ts: 2021-01-01 00:00:00
+sunset_ts: 3021-01-01 00:00:00
+price: 0
+hidden: false
+bonus:
+  - score: 0
+    coins: 0
+    categories: []
+    challenges: []
+
+tasks:
+  - id: t1
+    name: Linear
+    description: $n \le 1000$
+    random_tests: 20
+    static_tests: tests/t1
+    score:
+      score: 5
+      penalty: 0
+      min_score: 0
+    generator:
+      language: python
+      version: 3.9.4
+      files: [ t1.py, generator.py ]
+  - id: t2
+    name: Constant
+    description: $n \le 10^{21}$
+    random_tests: 20
+    static_tests: tests/t2
+    score:
+      score: 10
+      penalty: 0
+      min_score: 0
+    generator:
+      language: python
+      version: 3.9.4
+      files: [ t2.py, generator.py ]
+
+examples:
+  - input: "3"
+    output: "6"
+    explanation: $1+2+3=6$
+  - input: "5"
+    output: "15"
+    explanation: $1+2+3+4+5=15$
+  - input: "7"
+    output: "28"
+    explanation: $1+2+3+4+5+6+7=28$

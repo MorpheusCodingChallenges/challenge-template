@@ -1,0 +1,42 @@
+id: sum
+name: Sum
+description-file: description.md
+time_limit: 1000
+memory_limit: 256000000
+max_submissions: 50
+max_filesize: 5000
+release_ts: 2021-01-01 00:00:00
+sunset_ts: 3021-01-01 00:00:00
+price: 0
+hidden: false
+bonus:
+  - score: 0
+    coins: 0
+    categories: []
+    challenges: []
+
+tasks:
+  - id: task
+    name: Sum
+    description: "*None*"
+    random_tests: 20
+    static_tests: tests/task
+    score:
+      score: 10
+      penalty: 0
+      min_score: 0
+    generator:
+      language: python
+      version: 3.9.4
+      files: [ task.py ]
+
+examples:
+  - input: "2\n4\n5"
+    output: "9"
+    explanation: "$4 + 5 = 9$"
+  - input: "3\n4\n1\n17"
+    output: "22"
+    explanation: "$4 + 1 + 17 = 22$"
+  - input: "5\n12\n2834\n-213\n1337\n-42"
+    output: "3928"
+    explanation: "$12 + 2834 + (-213) + 1337 + (-42) = 3928$"

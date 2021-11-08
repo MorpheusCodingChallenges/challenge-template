@@ -1,0 +1,42 @@
+id: input
+name: Input
+description-file: description.md
+time_limit: 1000
+memory_limit: 256000000
+max_submissions: 50
+max_filesize: 5000
+release_ts: 2021-01-01 00:00:00
+sunset_ts: 3021-01-01 00:00:00
+price: 0
+hidden: false
+bonus:
+  - score: 0
+    coins: 0
+    categories: []
+    challenges: []
+
+tasks:
+  - id: task
+    name: Input
+    description: "*None*"
+    random_tests: 20
+    static_tests: tests/task
+    score:
+      score: 5
+      penalty: 0
+      min_score: 0
+    generator:
+      language: python
+      version: 3.9.4
+      files: [ task.py ]
+
+examples:
+  - input: "Hello World!"
+    output: "Hello World!"
+    explanation: ""
+  - input: "The quick brown fox jumps over the lazy dog!"
+    output: "The quick brown fox jumps over the lazy dog!"
+    explanation: ""
+  - input: "42"
+    output: "42"
+    explanation: ""
