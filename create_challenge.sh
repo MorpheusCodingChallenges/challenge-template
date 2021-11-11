@@ -54,8 +54,8 @@ tasks:
       min_score: 0
     generator:
       language: python
-      version: 3.9.4
-      files: [ generator.py ]
+      version: 3.10.0
+      files: [ task.py ]
 
 examples:
   - input: ""
@@ -65,7 +65,7 @@ EOF
 touch $dir/description.md $dir/task.md $dir/solution.py
 mkdir -p $dir/tests/task
 touch $dir/tests/task/1.{in,out}
-cat << EOF > $dir/generator.py
+cat << EOF > $dir/task.py
 import json
 
 
