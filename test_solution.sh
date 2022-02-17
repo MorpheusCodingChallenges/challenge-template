@@ -42,13 +42,13 @@ do
 
     testcase=$(python $2.py)
 
-    if time ( echo $testcase | jq -r .in | timeout -s 9 $time_limit prlimit --as=$memory_limit python solution.py | diff -Z --color=always - <(echo $testcase | jq -r .out) )
+    if time ( jq -r .in <<< $testcase | timeout -s 9 $time_limit prlimit --as=$memory_limit python solution.py | diff -Z --color=always - <(jq -r .out <<< $testcase) )
     then
         echo -e "Test $i: \033[32mCORRECT\033[0m"
     else
         mkdir -p failed_tests
-        echo $testcase | jq -r .in > failed_tests/$i.in
-        echo $testcase | jq -r .out > failed_tests/$i.out
+        jq -r .in > failed_tests/$i.in <<< $testcase
+        jq -r .out > failed_tests/$i.out <<< $testcase
 
         echo -e "Test $i: \033[31mFAILED\033[0m"
         failed=$((failed+1))

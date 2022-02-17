@@ -26,7 +26,7 @@ idx=$((idx + 1))
 
 testcase=$(python $2.py)
 echo "======= INPUT ======="
-echo $testcase | jq -r .in | tee tests/$2/$idx.in
+jq -r .in <<< $testcase | tee tests/$2/$idx.in
 echo
 echo "======= OUTPUT ======="
-echo $testcase | jq -r .out | tee tests/$2/$idx.out
+jq -r .out <<< $testcase | tee tests/$2/$idx.out
